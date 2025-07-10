@@ -1,5 +1,5 @@
 import asyncio,re
-from main import getmovie_link
+from main import *
 from aiogram import Bot,Dispatcher
 from aiogram.types import Message
 from aiogram.enums import ParseMode
@@ -7,7 +7,6 @@ from aiogram.webhook.aiohttp_server import SimpleRequestHandler, setup_applicati
 from aiohttp import web
 from aiogram.client.default import DefaultBotProperties
 from aiogram.filters import Command
-from html import escape
 
 token="7954588258:AAHQfI5TrvEljhRKT3yCGxKxsM0GHBIJPcw"
 bot=Bot(token=token,default=DefaultBotProperties(parse_mode=ParseMode.HTML))
@@ -28,10 +27,10 @@ async def handle_magnet(message: Message):
         for link in links:
             print(link)
             # Escape the link to prevent HTML parsing errors
-            safe_link = escape(link)
+            encoded_link =urllib.parse.quote(link, safe='/:?=&')
             await message.answer(
                 "🚀 <b>Magnet Link:</b>\n\n"
-                f"🔗 <a href='{safe_link}'>Click here to download</a>",
+                f"🔗 <a href='{encoded_link}'>Click here to download</a>",
                 parse_mode=ParseMode.HTML,
                 disable_web_page_preview=True
             )
