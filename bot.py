@@ -23,7 +23,7 @@ async def handle_magnet(message: Message):
         print(link)
         await message.answer(
                 f"🚀 <b>Direct Download Link:</b>\n\n"
-                f"🔗 <a href='{link}'>Click here to download</a>",
+                f"🔗 <a href={link}>Click here to download</a>",
                 parse_mode="HTML",
                 disable_web_page_preview=True
             )
