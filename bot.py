@@ -29,7 +29,7 @@ async def handle_magnet(message: Message):
             # Escape the link to prevent HTML parsing errors
             await message.answer(
                 "🚀 <b>Magnet Link:</b>\n\n"
-                f'🔗 <a href="{link}">Click here to download</a>',
+                f'🔗 <code>{link}</code>',
                 parse_mode=ParseMode.HTML,
                 disable_web_page_preview=True
             )
