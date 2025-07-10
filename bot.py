@@ -18,13 +18,15 @@ async def welcome_message(message:Message):
 
 @dp.message()
 async def handle_magnet(message: Message):
-    await message.answer(
-            f"🚀 <b>Direct Download Link:</b>\n\n"
-            f"🔗 <a href='{getmovie_link(message.text)}'>Click here to download</a>",
-            parse_mode="HTML",
-            disable_web_page_preview=True
-        )
-        
+    links=getmovie_link(message.text)
+    for link in links:
+        await message.answer(
+                f"🚀 <b>Direct Download Link:</b>\n\n"
+                f"🔗 <a href='{link}'>Click here to download</a>",
+                parse_mode="HTML",
+                disable_web_page_preview=True
+            )
+            
 async def on_startup(app: web.Application):
     await bot.set_webhook("https://magnetlinksbot.onrender.com/webhook")
 
