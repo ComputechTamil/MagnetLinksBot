@@ -14,7 +14,7 @@ dp=Dispatcher()
 @dp.message(Command("start"))
 async def welcome_message(message:Message):
     username=message.from_user.username or message.from_user.first_name
-    await message.answer(f"Hello {username}! 👋 Welcome to MagnetLink Bot.\nJust Send the Magnet Link I will Send the Direct Downloadable link!!")
+    await message.answer(f"Hello {username}! 👋 Welcome to MagnetLink Bot.\nJust Send the Movie Name I will Send the Magnet Link!!")
 
 @dp.message()
 async def handle_magnet(message: Message):
@@ -25,8 +25,6 @@ async def handle_magnet(message: Message):
             return
 
         for link in links:
-            print(link)
-            # Escape the link to prevent HTML parsing errors
             await message.answer(
                 "🚀 <b>Magnet Link:</b>\n\n"
                 f'🔗 <code>{link}</code>',
