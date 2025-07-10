@@ -1,5 +1,5 @@
 import asyncio,re
-from admain import getmovie_link
+from main import getmovie_link
 from aiogram import Bot,Dispatcher
 from aiogram.types import Message
 from aiogram.enums import ParseMode
