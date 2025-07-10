@@ -30,7 +30,7 @@ async def handle_magnet(message: Message):
             encoded_link =urllib.parse.quote(link, safe='/:?=&')
             await message.answer(
                 "🚀 <b>Magnet Link:</b>\n\n"
-                f'🔗 <a href="{encoded_link}">Click here to download</a>',
+                f'🔗 <a href={encoded_link}>Click here to download</a>',
                 parse_mode=ParseMode.HTML,
                 disable_web_page_preview=True
             )
