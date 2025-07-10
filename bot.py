@@ -20,6 +20,7 @@ async def welcome_message(message:Message):
 async def handle_magnet(message: Message):
     links=getmovie_link(message.text)
     for link in links:
+        print(link)
         await message.answer(
                 f"🚀 <b>Direct Download Link:</b>\n\n"
                 f"🔗 <a href='{link}'>Click here to download</a>",
