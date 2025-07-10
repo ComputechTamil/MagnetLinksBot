@@ -26,7 +26,7 @@ async def handle_magnet(message: Message):
         )
         
 async def on_startup(app: web.Application):
-    await bot.set_webhook("https://magnetlinks.onrender.com/webhook")
+    await bot.set_webhook("https://magnetlinksbot.onrender.com/webhook")
 
 def main():
     # Create aiohttp application
