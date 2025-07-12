@@ -12,7 +12,7 @@ def extract_page(link:str)->str:
 def getmovie_link(moviename:str,all_links=False):
     moviename="|".join(moviename.split()) if " " in moviename else moviename
     print(f"Searching Links for {moviename}")
-    link1=f"https://www-1tamilmv-onl.translate.goog/index.php?/search/&q={moviename}&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp"
+    link1=f"https://www-1tamilmv-com.translate.goog/index.php?/search/&q={moviename}&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp"
     page1=extract_page(link1).text
     soup=bs(page1,"html.parser")
     links= [link.get("href") for link in soup.select('h2.ipsType_reset a')]
@@ -29,7 +29,7 @@ def getmovie_link(moviename:str,all_links=False):
                 pass
         else:
             pass
-    return magnet_links if magnet_links else "No link Found"
+    return magnet_links  
 if __name__=="__main__":
     start_time=time()
     links=getmovie_link("peaky blinders")
