@@ -1,4 +1,4 @@
-import asyncio,re
+import asyncio,re,os
 from main import *
 from aiogram import Bot,Dispatcher
 from aiogram.types import Message
