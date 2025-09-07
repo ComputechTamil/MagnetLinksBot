@@ -8,7 +8,7 @@ from aiohttp import web
 from aiogram.client.default import DefaultBotProperties
 from aiogram.filters import Command
 
-token=os.getenv(TELEGRAM_TOKEN)
+token=os.getenv("TELEGRAM_TOKEN")
 bot=Bot(token=token,default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp=Dispatcher()
 @dp.message(Command("start"))
